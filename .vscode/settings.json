@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\Mv\\.virtualenvs\\inclass-sNtC4qeO\\Scripts\\python.exe"
+    "python.pythonPath": "C:\\Users\\Mv\\.virtualenvs\\inclass-sNtC4qeO\\Scripts\\python.exe",
+    "git.ignoreLimitWarning": true
 }

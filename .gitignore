@@ -121,3 +121,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+*.md
+node_modules
+node_modules
+node_modules
+node_modules
+node_modules
+node_modules
+node_modules
