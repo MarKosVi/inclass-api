@@ -3,5 +3,5 @@ import turmas from './turmas';
 
 
 export default combineReducers({
-    turmasReducer
+    turmas
 });
