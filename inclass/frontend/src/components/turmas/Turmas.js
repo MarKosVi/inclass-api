@@ -1,7 +1,7 @@
 import React, { Component, Fragment }from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { getTurmas } from "../../actions/turmas";
+import { getTurmas, deleteTurma } from "../../actions/turmas";
 
 
 export class Turmas extends Component{
@@ -24,12 +24,14 @@ export class Turmas extends Component{
                        </tr>
                    </thead>
                    <tbody>
-                       {this.props.turmas.map(tbturma => (
-                           <tr key = {tbturma.id}>
-                               <td>{tbturma.curso}</td>
-                               <td>{tbturma.cod_turma}</td>
-                               <td>{tbturma.qtd_alunos}</td>
-                               <td><button className="btn btn-danger btn-sm">
+                       {this.props.turmas.map(tbdisciplina => (
+                           <tr key = {tbdisciplina.id}>
+                               <td>{tbdisciplina.nome}</td>
+                               <td>{tbdisciplina.tipo_sala}</td>
+                               <td>{tbdisciplina.id_escola}</td>
+                               <td>
+                                   <button onClick={this.props.deleteTurma.bind(this, tbdisciplina.id)} 
+                                   className="btn btn-danger btn-sm">{" "}
                                    Delete</button>
                                 </td>
                            </tr>
@@ -45,4 +47,4 @@ const mapStateToProps = state => ({
     turmas: state.turmas.turmas
 });
 
-export default connect(mapStateToProps, { getTurmas })(Turmas);
+export default connect(mapStateToProps, { getTurmas, deleteTurma })(Turmas);
