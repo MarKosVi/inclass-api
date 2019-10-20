@@ -13,3 +13,4 @@ export const getTurmas = () => dispatch => {
         })
         .catch(err => console.log(err));
 }
+

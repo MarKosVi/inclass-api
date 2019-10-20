@@ -10,7 +10,7 @@ export default function(state = initialState, action){
             return{
                 ...state,
                 turmas: action.payload
-            }
+            };
         default:
             return state; 
 

@@ -1,15 +1,15 @@
 import React, { Component, Fragment }from "react";
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { getTurmas } from '../../actions/turmas';
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { getTurmas } from "../../actions/turmas";
 
 
 export class Turmas extends Component{
     static propTypes = {
         turmas: PropTypes.array.isRequired
     };
-    componentDidMount(){
-        this.props.getTurmas
+    componentDidMount() {
+        this.props.getTurmas();
     }
     render(){
         return(
@@ -26,13 +26,14 @@ export class Turmas extends Component{
                    <tbody>
                        {this.props.turmas.map(tbturma => (
                            <tr key = {tbturma.id}>
-                               <td>{tbturma.qtd_alunos}</td>
-                               <td>{tbturma.cod_turma}</td>
                                <td>{tbturma.curso}</td>
+                               <td>{tbturma.cod_turma}</td>
+                               <td>{tbturma.qtd_alunos}</td>
                                <td><button className="btn btn-danger btn-sm">
                                    Delete</button>
                                 </td>
                            </tr>
+                           
                        ))}
                    </tbody>
                </table>
@@ -44,4 +45,4 @@ const mapStateToProps = state => ({
     turmas: state.turmas.turmas
 });
 
-export default connect(mapStateToProps, {getTurmas})(Turmas);
+export default connect(mapStateToProps, { getTurmas })(Turmas);
