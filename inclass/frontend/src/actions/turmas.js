@@ -1,5 +1,9 @@
 import axios from 'axios';
-import { GET_TURMAS, DELETE_TURMA } from './types';
+import {
+    GET_TURMAS,
+    DELETE_TURMA,
+    ADD_TURMA
+} from './types';
 
 
 
@@ -22,11 +26,25 @@ export const getTurmas = () => dispatch => {
 
 export const deleteTurma = (id) => dispatch => {
     axios
-        .delete('/api/disciplina/'+id+'/')
+        .delete('/api/disciplina/' + id + '/')
         .then(res => {
             dispatch({
                 type: DELETE_TURMA,
                 payload: id
+            });
+        })
+        .catch(err => console.log(err));
+
+}
+
+//POST
+export const addTurma = turma => dispatch => {
+    axios
+        .post('/api/disciplina/', turma)
+        .then(res => {
+            dispatch({
+                type: ADD_TURMA,
+                payload: res.data
             });
         })
         .catch(err => console.log(err));

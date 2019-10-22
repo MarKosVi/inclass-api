@@ -6,7 +6,9 @@ import { getTurmas, deleteTurma } from "../../actions/turmas";
 
 export class Turmas extends Component{
     static propTypes = {
-        turmas: PropTypes.array.isRequired
+        turmas: PropTypes.array.isRequired,
+        getTurmas:PropTypes.func.isRequired,
+        deleteTurma: PropTypes.func.isRequired
     };
     componentDidMount() {
         this.props.getTurmas();

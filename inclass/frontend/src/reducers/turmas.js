@@ -1,4 +1,4 @@
-import { GET_TURMAS, DELETE_TURMA } from "../actions/types.js";
+import { GET_TURMAS, DELETE_TURMA, ADD_TURMA } from "../actions/types.js";
 import { Turmas } from "../components/turmas/Turmas.js";
 
 const initialState = {
@@ -19,6 +19,12 @@ export default function(state = initialState, action){
                 ...state,
                 turmas: state.turmas.filter(Turmas => Turmas.id !==
                     action.payload)
+            };
+
+        case ADD_TURMA:
+            return{
+                ...state,
+                turmas: [...state.turmas, action.payload]
             };
         default:
             return state; 
