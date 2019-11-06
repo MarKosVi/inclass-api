@@ -8,7 +8,13 @@ from turmas.models import tbsala
 from turmas.models import tbturma
 from turmas.models import tbturma_disciplina
 from turmas.models import tbusuario
+#from turmas.gurobi import souver
 
+
+# class SouverSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model= souver
+#         fields = '__all__'
 
 class TbDisciplinaSerializer(serializers.ModelSerializer):
     class Meta:

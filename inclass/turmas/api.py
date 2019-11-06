@@ -15,7 +15,10 @@ from .serializers import TbSalaSerializer
 from .serializers import TbTurmaSerializer
 from .serializers import TbTurma_DisciplinaSerializer
 from .serializers import TbUsuarioSerializer
+#from .serializer import SouverSerializer
 
+#Class SouverView
+# class SouverViewSet()
 
 class TbDisciplinaViewSet(viewsets.ModelViewSet):
     queryset = tbdisciplina.objects.all()
